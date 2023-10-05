@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>library</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2 class="logo">Library</h2>
+            <button type="button" id="sign-up-button">Sign Up</button>
+        </div>
+        <div class="content">
+            <div id="add-book">+</div>
+            <dialog>
+               <form class="form-container">
+                <div class="inputs-container">
+                    <label for="title">Title</label>
+                    <input type="text" name="title" id="title" placeholder="Name of the book">
+                </div>
+                <div class="inputs-container">
+                    <label for="author">Author</label>
+                    <input type="text" name="author" id="author" placeholder="Name of the author">
+                </div>
+                <div class="inputs-container">
+                    <label for="pages">Pages</label>
+                    <input type="number" name="pages" id="pages" placeholder="No. of Pages">
+                </div>
+                <div class="check-container">
+                    <label for="completed">Completed</label>
+                    <input type="checkbox" name="completed" id="completed">
+                </div>
+                <div class="rating-container">
+                    <label for="rating">Rating</label>
+                    <span><input type="number" name="rating" id="rating" min="1" max="5">/5</span>
+                    
+                </div>
+                <div class="frm-btns-container">
+                    <button type="button" id="close">Close</button>
+                    <button id="submit">Submit</button>
+                </div>
+               </form>
+                
+            </dialog>
+        </div>
+        <div class="sidebar">
+                <h3>Book Info</h3>
+                <div class="side-container">
+                    <p>Title :</p>
+                    <p>Author :</p>
+                    <p>No. of Pages :</p>
+                    <p>Completed :</p>
+                    <p>Rating :</p>
+                </div>     
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

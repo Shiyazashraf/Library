@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Black+Han+Sans&family=Cherry+Bomb+One&family=Lobster&family=Rubik+Dirt&display=swap');
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+:root {
+    --black : #0B0C10;
+    --grey : #1f2833;
+    --light-grey : #c5c6c7;
+    --cyan : #66FCF1;
+    --dark-cyan : #45A29E;
+}
+
+.container {
+    height: 100vh;
+    display: grid;
+    grid: 100px 1fr / 3fr minmax(300px,400px);
+}
+
+ /* header - logo - sign-up button */
+.header {
+    grid-column: 1/-1;
+    background-color: var(--black);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:0  5rem;
+}
+.header .logo {
+    color: var(--cyan);
+    font-size: 40px;
+    font-weight: 500;
+    font-family:'Lobster', cursive;
+}
+
+.header #sign-up-button {
+    padding: 10px 20px;
+    border: 2px solid var(--cyan);
+    color: var(--cyan);
+    background-color: transparent;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 300ms ease-in-out ;
+}
+
+#sign-up-button:hover {
+    background-color: var(--cyan);
+    color: var(--black);
+    cursor: pointer;
+    border-color: var(--black);
+}
+
+/*  main content - books and add book button */
+
+.content {
+    padding: 2rem;
+    grid-column: 1/2;
+    grid-row: 2/3;
+    background:linear-gradient(to top,var(--black),var(--grey));
+    display: grid;
+    grid: repeat(2,minmax(300px,400px))/repeat(4,minmax(250px,300px));
+    grid-auto-rows: minmax(300px,400px);
+    gap: 2rem;
+}
+
+.content #add-book{
+    background-color: var(--black);
+    opacity: .5;
+    border-radius: 1rem;
+    border: 2px solid var(--light-grey);
+    color: var(--light-grey);
+    font-size: 5rem;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 250ms ease-out;
+}
+
+#add-book:hover {
+    box-shadow:0px 0px 20px 5px black;
+    cursor: pointer;
+    border-color: var(--cyan);
+    color: var(--cyan);
+}
+
+/* dialog pop-up */
+
+dialog {
+    margin: auto;
+    width: 500px;
+    height: 700px;
+    z-index: 2;
+    border-radius: 1rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border: 1px solid var(--dark-cyan);
+    box-shadow: 0 4px 8px black;
+    color: var(--light-grey);
+
+}
+
+dialog::backdrop {
+    backdrop-filter: blur(5px);
+  }
+
+dialog[open] {
+animation: fadein 300ms ease-in forwards;
+}
+
+@keyframes fadein{
+0%{
+    opacity:0;
+}
+100%{
+    opacity:1;
+}
+}
+
+/* dialog - form styling */
+.form-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: start;
+    font-size: 20px;
+}
+
+.inputs-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+}
+
+.check-container,
+.rating-container {
+    display: flex;
+    gap: 1rem;
+}
+
+.inputs-container input {
+    height: 30px;
+    border:2px solid var(--light-grey);
+    border-radius: 5px;
+    padding: 10px;
+    outline: none;
+    background-color: var(--grey);
+    opacity: 0.6;
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+}
+.inputs-container input::placeholder {
+    color: var(--light-grey)
+}
+
+#completed {
+    width: 30px;
+    accent-color: var(--dark-cyan);
+}
+
+.rating-container input {
+    background-color: var(--grey);
+    border: 1px solid var(--light-grey);
+    border-radius: 5px;
+    padding: 5px;
+    color: white;
+    outline: none;
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+    font-size: 20px;
+    text-align: center;
+}
+.rating-container input::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button ,
+.inputs-container input::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {
+    appearance: none;
+}
+
+.frm-btns-container {
+    display: flex;
+    width: 100%;
+    height: 100px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.frm-btns-container button {
+    padding: 10px;
+    width: 6rem;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--black);
+    border: 2px solid var(--dark-cyan);
+    border-radius: 10px;
+    background-color: var(--dark-cyan);
+    transition: all 200ms ease-in-out;
+}
+
+.frm-btns-container button:hover {
+    background-color: transparent;
+    color: var(--dark-cyan);
+}
+
+.form-container input:focus{
+    border-color: var(--cyan);
+}
+
+
+/* details of the book  */
+
+.sidebar {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    background-color: #1f2833;
+    box-shadow: 0px 0px 10px var(--black);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    color: var(--light-grey);
+}
+
+.sidebar h3 {
+    text-align: center;
+    text-decoration: underline;
+}
+
+.sidebar p {
+    line-height: 3rem;
+}
