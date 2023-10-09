@@ -20,7 +20,7 @@
 .container {
     height: 100vh;
     display: grid;
-    grid: 100px 1fr / 3fr minmax(300px,400px);
+    grid: 100px 1fr / 3fr minmax(300px,550px);
 }
 
  /* header - logo - sign-up button */
@@ -82,6 +82,8 @@
     align-items: center;
     justify-content: center;
     transition: all 250ms ease-out;
+    grid-column: 1/2;
+    grid-row: 1/2;
 }
 
 #add-book:hover {
@@ -89,6 +91,73 @@
     cursor: pointer;
     border-color: var(--cyan);
     color: var(--cyan);
+}
+
+
+/* Style for the book card */
+.book-card {
+    position: relative;
+    background-color: var(--grey);
+    padding: 20px;
+    border: 2px solid var(--dark-cyan);
+    border-radius: 10px;
+    color: var(--light-grey);
+    font-size: 20px;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    transition: all 100ms ease-out;
+}
+
+.book-card:hover  {
+    box-shadow:0px 0px 5px 1px var(--dark-cyan);
+    cursor: pointer;
+}
+
+.book-card:active {
+    border-color: rgb(4, 248, 33);
+}
+
+.book-card h3 {
+    font-size: 30px;
+    font-weight: bold;
+    color: var(--light-grey);
+    text-shadow: 0px 4px 8px var(--black);
+}
+
+
+.bookcard-btn-container .bx {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    background-color: var(--grey);
+    padding: 5px;
+    font-size: 30px;
+    color: var(--light-grey);
+    cursor: pointer;
+    transition: all 100ms ease-in-out;
+}
+.bookcard-btn-container .bx:hover {
+    color: var(--dark-cyan);
+}
+
+.bookcard-btn-container label {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+#read {
+    margin-left: 10px;
+    height: 18px;
+    width: 18px;
+    accent-color: var(--dark-cyan);
 }
 
 /* dialog pop-up */
@@ -218,9 +287,11 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 
+
 /* details of the book  */
 
 .sidebar {
+    position: relative;
     grid-column: 2/3;
     grid-row: 2/3;
     background-color: #1f2833;
@@ -239,4 +310,12 @@ input[type=number]::-webkit-outer-spin-button {
 
 .sidebar p {
     line-height: 3rem;
+}
+
+
+.sidebar h4 {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
